@@ -1,1 +1,0 @@
-"# Portfolio"  initgit add homepage.html commit -m "first commit"git branch -M maingit remote add origin https://github.com/QaisShalan/Portfolio.gitgit push -u origin main
