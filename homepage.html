@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Qais Shalan — Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #1a1612;
+      background: #f5f0e8;
+    }
+
+    .qs-header {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      border: 1px solid #d4c9b5;
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 40px auto 20px;
+      max-width: 900px;
+    }
+
+    .qs-left {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .qs-mono {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7a7068;
+    }
+
+    .qs-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      line-height: 1.05;
+      font-weight: 700;
+    }
+
+    .qs-h1 em {
+      font-style: italic;
+      color: #c0392b;
+    }
+
+    .qs-subtitle {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #7a7068;
+      margin: 10px 0;
+    }
+
+    .qs-bio {
+      font-size: 14px;
+      color: #4a4540;
+      line-height: 1.8;
+    }
+
+    .qs-nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    .qs-nav a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #7a7068;
+      text-decoration: none;
+    }
+
+    .qs-nav a:hover {
+      color: #c0392b;
+    }
+
+    .qs-right {
+      background: #2a2420;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+    }
+
+    .qs-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .qs-caption {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+    }
+
+    .qs-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 0 40px;
+    }
+
+    .qs-section {
+      margin: 28px 0;
+    }
+
+    .qs-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #c0392b;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .qs-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #d4c9b5;
+    }
+
+    .qs-resume-grid {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 0 32px;
+    }
+
+    .qs-year {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #7a7068;
+      padding-top: 4px;
+    }
+
+    .qs-entry {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #d4c9b5;
+      margin-bottom: 24px;
+    }
+
+    .qs-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .qs-entry h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .qs-company {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: #c0392b;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .qs-entry p {
+      font-size: 13px;
+      color: #4a4540;
+    }
+
+    .qs-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .qs-tag {
+      border: 1px solid #d4c9b5;
+      padding: 4px 14px;
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #7a7068;
+      border-radius: 2px;
+    }
+
+    .qs-pi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .qs-pi-grid h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .qs-pi-grid p {
+      font-size: 13px;
+      color: #4a4540;
+    }
+
+    .qs-interests {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid #d4c9b5;
+    }
+
+    .qs-icard {
+      padding: 20px 18px;
+      border-right: 1px solid #d4c9b5;
+    }
+
+    .qs-icard:last-child {
+      border-right: none;
+    }
+
+    .qs-icard h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .qs-icard p {
+      font-size: 12px;
+      color: #7a7068;
+    }
+
+    .qs-homeworks {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .qs-homework {
+      border: 1px solid #d4c9b5;
+      padding: 16px 18px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .qs-homework h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .qs-homework p {
+      font-size: 11px;
+      color: #7a7068;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .qs-pdf-btn {
+      text-decoration: none;
+      border: 1px solid #c0392b;
+      color: #c0392b;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.08em;
+      transition: 0.2s;
+    }
+
+    .qs-pdf-btn:hover {
+      background: #c0392b;
+      color: white;
+    }
+
+    .qs-contact {
+      display: flex;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .qs-citem {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .qs-citem .lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7a7068;
+    }
+
+    .qs-citem a {
+      font-size: 13px;
+      color: #1a1612;
+      text-decoration: none;
+      border-bottom: 1px solid #d4c9b5;
+      padding-bottom: 1px;
+    }
+
+    .qs-citem a:hover {
+      color: #c0392b;
+    }
+
+    .qs-footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #d4c9b5;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .qs-header {
+        grid-template-columns: 1fr;
+      }
+
+      .qs-right {
+        height: 350px;
+      }
+
+      .qs-pi-grid,
+      .qs-interests,
+      .qs-resume-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .qs-interests {
+        grid-template-columns: 1fr;
+      }
+
+      .qs-icard {
+        border-right: none;
+        border-bottom: 1px solid #d4c9b5;
+      }
+
+      .qs-homework {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .qs-footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <div class="qs-header">
+
+    <div class="qs-left">
+
+      <div class="qs-mono">
+        Personal Portfolio — Est. 2026
+      </div>
+
+      <div>
+        <h1 class="qs-h1">
+          Qais<br><em>Shalan</em>
+        </h1>
+
+        <p class="qs-subtitle">
+          Software Engineer & Creative Technologist
+        </p>
+
+        <p class="qs-bio">
+          I build thoughtful digital products at the intersection of engineering rigour and human-centred design.
+        </p>
+      </div>
+
+      <nav class="qs-nav">
+        <a href="#education">Resume</a>
+        <a href="#interests">Interests</a>
+        <a href="#homeworks">Homeworks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </div>
+
+    <!-- CHANGE IMAGE NAME HERE -->
+    <div class="qs-right">
+      <img src="qais.jpg" alt="Qais Shalan">
+      <p class="qs-caption">Qais Shalan</p>
+    </div>
+
+  </div>
+
+  <div class="qs-content">
+
+    <!-- EDUCATION -->
+
+    <div class="qs-section" id="education">
+
+      <div class="qs-label">Education</div>
+
+      <div class="qs-resume-grid">
+
+        <div class="qs-year">2022–2026</div>
+
+        <div class="qs-entry">
+          <h3>B.Sc. Software Engineering</h3>
+
+          <div class="qs-company">
+            Near East University
+          </div>
+
+          <p>
+            Focused on software engineering, cybersecurity, and modern web technologies.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+
+    <div class="qs-section">
+
+      <div class="qs-label">Technical Skills</div>
+
+      <div class="qs-tags">
+        <span class="qs-tag">HTML</span>
+        <span class="qs-tag">CSS</span>
+        <span class="qs-tag">JavaScript</span>
+        <span class="qs-tag">React</span>
+        <span class="qs-tag">Node.js</span>
+        <span class="qs-tag">Python</span>
+        <span class="qs-tag">Figma</span>
+      </div>
+
+    </div>
+
+    <!-- PROFESSIONAL INTERESTS -->
+
+    <div class="qs-section">
+
+      <div class="qs-label">Professional Interests</div>
+
+      <div class="qs-pi-grid">
+
+        <div>
+          <h3>Web Development</h3>
+
+          <p>
+            Passionate about building responsive and modern web applications using HTML, CSS, JavaScript, React, and Node.js.
+          </p>
+        </div>
+
+        <div>
+          <h3>Cyber Security</h3>
+
+          <p>
+            Interested in ethical hacking, network security, penetration testing, and protecting systems against cyber threats.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HOBBIES -->
+
+    <div class="qs-section" id="interests">
+
+      <div class="qs-label">Beyond the Screen</div>
+
+      <div class="qs-interests">
+
+        <div class="qs-icard">
+          <h3>Coding</h3>
+
+          <p>
+            Building side projects and exploring new technologies.
+          </p>
+        </div>
+
+        <div class="qs-icard">
+          <h3>Gaming</h3>
+
+          <p>
+            Strategy and open-world games with strong storytelling.
+          </p>
+        </div>
+
+        <div class="qs-icard">
+          <h3>Problem Solving</h3>
+
+          <p>
+            Enjoy solving coding challenges and logical problems.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- HOMEWORKS -->
+
+    <div class="qs-section" id="homeworks">
+
+      <div class="qs-label">Homeworks & Projects</div>
+
+      <div class="qs-homeworks">
+
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 2 </h3>
+          </div>
+
+          <!-- CHANGE PDF FILE NAME HERE -->
+          <a href="HW2.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 3 </h3>
+          </div>
+
+          <a href="HW3.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 4 </h3>
+          </div>
+
+          <a href="HW4.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 5 </h3>
+          </div>
+
+          <a href="HW5.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 6</h3>
+          </div>
+
+          <a href="HW6.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 7 </h3>
+          </div>
+
+          <a href="HW7.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+
+        <!-- HOMEWORK 2 -->
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 8 </h3>
+            <p>Not completed.</p>
+          </div>
+
+          <a href="homework2.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+
+        <div class="qs-homework">
+
+          <div>
+            <h3>Homework 8  </h3>
+            <p>Not completed.</p>
+
+          </div>
+
+          <a href="homework3.pdf" target="_blank" class="qs-pdf-btn">
+            OPEN PDF
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- CONTACT -->
+
+    <div class="qs-section" id="contact">
+
+      <div class="qs-label">Get in Touch</div>
+
+      <div class="qs-contact">
+
+        <!-- CHANGE EMAIL HERE -->
+        <div class="qs-citem">
+          <span class="lbl">Email</span>
+
+          <a href="mailto:shalanqais@gmail.com">
+            shalanqais@gmail.com
+          </a>
+        </div>
+
+        <!-- CHANGE GITHUB LINK HERE -->
+        <div class="qs-citem">
+          <span class="lbl">GitHub</span>
+
+          <a href="https://github.com/QaisShalan" target="_blank">
+           github.com/QaisShalan
+          </a>
+        </div>
+
+        <!-- CHANGE LINKEDIN LINK HERE -->
+        <div class="qs-citem">
+          <span class="lbl">LinkedIn</span>
+
+          <a href="https://www.linkedin.com/in/qais-shalan/" target="_blank">
+            linkedin.com/in/qais-shalan/
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="qs-footer">
+      <span class="qs-mono">© 2026 Qais Shalan</span>
+      <span class="qs-mono">Palestine · North Cyprus</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
